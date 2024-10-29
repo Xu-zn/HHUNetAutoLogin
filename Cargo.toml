@@ -1,0 +1,21 @@
+[package]
+name = "auto-login"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+opt-level = "z"
+panic = "abort"
+strip = "symbols" 
+
+[dependencies]
+headless_chrome = { version = "1.0.15" }
+reqwest = { version = "0.12.8", default-features = false, features = ["blocking"] }
+serde = {version = "1.0.213", default-features = false, features = ["derive"] }
+toml = "0.8.19"
+tray-item = "0.10.0"
+tklog = "0.2.4"
+
+
+[build-dependencies]
+embed-resource = "2.3"
